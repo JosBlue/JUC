@@ -16,6 +16,7 @@ public class CycliBarrierTest {
 
     public static void main(String[] args) {
 
+
         // 20满人 然后发车
         CyclicBarrier cyclicBarrier = new CyclicBarrier(20, new Runnable() {
             @Override
