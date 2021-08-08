@@ -20,11 +20,11 @@
 >要处理这个问题，可以通过加版本号（version）的方式处理  
 >JDK1.5 开始，引入了 AtomicStampedReference这个类，内部维护了一个 Pair 对象, 存储了 value 值和一个版本号, 每次更新除了 value 值还会更新版本号
 >对于ABA问题，如果是基础类型，不存在问题，如果是引用类型，就可能会存在问题  
-#### 2.2 循环时间长开销大。  
-#### 2.3 只能保证一个共享变量的原子操作。 
+#### 2.2 循环时间长开销大。   
+#### 2.3 只能保证一个共享变量的原子操作。  
 
 ##### 注意：
-> 所有的原子类，底层都是通过Unsafe这个类的compareAndSwap来实现的， unsafe.compareAndSwapInt(this, valueOffset, expect, update);  
+> 所有的原子类，底层都是通过Unsafe这个类的compareAndSwap来实现的， Unsafe.compareAndSwapInt(this, valueOffset, expect, update);  
 >传入当前对象，当前值在内存中的偏移量，当前值的期望值，当前值的更新值，四个参数。JDK11变为了weakCompareAndSwap。
 >Unsafe 等同于C/C++中的指针  
 >

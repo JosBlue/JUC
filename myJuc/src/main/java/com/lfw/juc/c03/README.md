@@ -15,6 +15,8 @@
 >（2）synchronized会自动释放锁，reentrantlock需要手动释放  
 >（3）synchronized没法对interrupt做出响应，reentrantlock可以对interrupt做出响应  
 >（4）reentrantlock可以进行尝试锁定，然后根据结果值再进行后续处理，synchronized没法处理  
+> (5) synchronized的底层实现是四种锁状态的升级，reentrantlock底层是CAS的实现  
+>（6）reentranlock有不同的队列，但是synchronized则是没有的
 >
 >### 3. lock 与 lockInterruptibly比较区别在于：
 > lock 优先考虑获取锁，待获取锁成功后，才响应中断。  
@@ -52,3 +54,10 @@
 ### 9. Exchanger 交换 
 > 可用于线程间的数据交换  
 > 场景可以考虑：游戏中交换装备  
+>
+>
+### 10. LockSupport
+> 核心方法：LockSupport.park();让当前线程等待 
+>LockSupport.unpark();让当前线程继续执行  
+>注意：LockSupport.unpark();可以比park()先执行，并且也可以生效。 
+>

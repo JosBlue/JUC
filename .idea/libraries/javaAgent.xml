@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="javaAgent">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../javaAgent/out/artifacts/javaAgent_jar/javaAgent.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

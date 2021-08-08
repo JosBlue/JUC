@@ -1,0 +1,15 @@
+### BD
+1、synchrnoized和reentrantlock的底层实现及重入的底层原理
+synchronized
+
+
+
+12、Tomcat为什么要重写类加载器
+tomcat容器可能会加载启动多个服务，每个服务之间的第三方类库加载是需要隔离的，相同的类库引用需要共享，不同版本的类库引用需要单独加载；
+同时，JSP的加载，是需要热加载切换的，但是JVM的类加载器都无法满足上诉的这些要求，因此tomcat重写了类加载器。
+tomcat自己定义的类加载器：（5个）
+CommonClassLoader：tomcat最基本的类加载器，加载路径中的class可以被tomcat和各个webapp访问
+CatalinaClassLoader：tomcat私有的类加载器，webapp不能访问其加载路径下的class，即对webapp不可见
+SharedClassLoader：各个webapp共享的类加载器，对tomcat不可见
+WebappClassLoader：webapp私有的类加载器，只对当前webapp可见
+JspClassLoader

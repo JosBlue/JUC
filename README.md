@@ -32,9 +32,7 @@
 6. temminer 线程终止状态
 可通过getState()方法获取当前线程的状态
 
-## synchronize
-
-## 
+## 更多信息，请看每个对应包下的readme
 
 
 
