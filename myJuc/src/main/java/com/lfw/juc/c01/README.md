@@ -1,5 +1,5 @@
 ### 1. 线程状态
->![avatar](/Users/liufuwei/Documents/my-project/my-juc/JUC/myJuc/image/线程状态.png) 
+>![avatar](/Users/liufuwei/Documents/my-project/my-juc/JUC/myJuc/image/线程状态-1.png) 
 #### 1.1 关于线程的相关说明：
 >关闭线程：现在没有这样的说法了，Stop已经不建议是使用了
 >
@@ -26,6 +26,7 @@
 >
 >其他：根据synchronizedT中包含的信息，总结相关信息  
 >
+注意：synchronized 同步代码块是使用 monitorenter 和 monitorexit 指令实现的
 >
 #### 1.3 synchronized锁升级的底层实现过程：
 > synchronized在被线程第一次被用到时，为了保证效率，并没有被加锁，只是记录当前线程的id，此时被称为偏向锁  

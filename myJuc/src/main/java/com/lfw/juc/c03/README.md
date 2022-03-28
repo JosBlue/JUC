@@ -17,6 +17,14 @@
 >（4）reentrantlock可以进行尝试锁定，然后根据结果值再进行后续处理，synchronized没法处理  
 > (5) synchronized的底层实现是四种锁状态的升级，reentrantlock底层是CAS的实现  
 >（6）reentranlock有不同的队列，但是synchronized则是没有的
+
+2022-03-01-新增：
+首先，肯定是由于sync存在一些问题，所以才会出现reentrantlock，reentrantlock是从jdk1.5开始出现的，在最初的sync，根本没有锁升级的这些过程，
+一上来就是重量级锁，因此性能特别差，才会在JDK1.5的时候，出现reentrantlock
+其次，sync还有种固病，就是他的wait和notify，要么wait，要么notify，而reentrantlock可以切割出多个条件变量，他就可以灵活使用，让开发者自由选择，
+比如他的tryLock，可以判断是否可以获取到锁，但是sync却只能要么wait，要么notify，功能单一
+
+
 >
 >### 3. lock 与 lockInterruptibly比较区别在于：
 > lock 优先考虑获取锁，待获取锁成功后，才响应中断。  
